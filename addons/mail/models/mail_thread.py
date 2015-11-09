@@ -1658,11 +1658,11 @@ class MailThread(models.AbstractModel):
             subtype_id = self.env['ir.model.data'].xmlid_to_res_id(subtype)
 
         # automatically subscribe recipients if asked to
-        if self._context.get('mail_post_autofollow') and self.ids and partner_ids:
-            partner_to_subscribe = partner_ids
-            if self._context.get('mail_post_autofollow_partner_ids'):
-                partner_to_subscribe = filter(lambda item: item in self._context.get('mail_post_autofollow_partner_ids'), partner_ids)
-            self.message_subscribe(list(partner_to_subscribe))
+        #if self._context.get('mail_post_autofollow') and self.ids and partner_ids:
+        #    partner_to_subscribe = partner_ids
+        #    if self._context.get('mail_post_autofollow_partner_ids'):
+        #        partner_to_subscribe = filter(lambda item: item in self._context.get('mail_post_autofollow_partner_ids'), partner_ids)
+        #    self.message_subscribe(list(partner_to_subscribe))
 
         # _mail_flat_thread: automatically set free messages to the first posted message
         MailMessage = self.env['mail.message']
