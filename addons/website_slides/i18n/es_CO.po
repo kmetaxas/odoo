@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-21 09:20+0000\n"
-"PO-Revision-Date: 2015-11-07 07:03+0000\n"
+"PO-Revision-Date: 2015-11-28 07:11+0000\n"
 "Last-Translator: Mateo Tibaquirá <nestormateo@gmail.com>\n"
 "Language-Team: Spanish (Colombia) (http://www.transifex.com/odoo/odoo-9/language/es_CO/)\n"
 "MIME-Version: 1.0\n"
@@ -217,7 +217,7 @@ msgstr "<i class=\"fa fa-exclamation-triangle\"/> Esta"
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slide_detail_view
 msgid "<i class=\"fa fa-home\"/> About"
-msgstr "<i class=\"fa fa-home\"/> Acerca de"
+msgstr "<i class=\"fa fa-home\"/> Sobre Nosotros"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slides_channel_header
@@ -380,7 +380,7 @@ msgstr "Grupos de Canales"
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.home
 msgid "Channel Settings"
-msgstr ""
+msgstr "Ajustes del Canal"
 
 #. module: website_slides
 #. openerp-web
@@ -482,7 +482,7 @@ msgstr "Fecha del último mensaje publicado en el registro."
 msgid ""
 "Default channel for slides, all public users can access content of this "
 "channel."
-msgstr ""
+msgstr "Canal predeterminado para las presentaciones, todos los usuarios públicos pueden acceder al contenido de este canal."
 
 #. module: website_slides
 #. openerp-web
@@ -531,7 +531,7 @@ msgstr ""
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_document_id
 msgid "Document ID"
-msgstr ""
+msgstr "ID Documento"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_url
@@ -543,7 +543,7 @@ msgstr ""
 msgid ""
 "Document type will be set automatically depending on file type, height and "
 "width."
-msgstr ""
+msgstr "El tipo de documento será fijado automáticamente dependiendo del tipo del archivo, alto y ancho"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slides_channel_header
@@ -665,7 +665,7 @@ msgstr "Seguidores (Asociados)"
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_can_see_full
 msgid "Full Access"
-msgstr ""
+msgstr "Acceso Completo"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_channel_form
@@ -827,7 +827,7 @@ msgstr "Mensajes"
 #: model:ir.model.fields,help:website_slides.field_slide_channel_message_ids
 #: model:ir.model.fields,help:website_slides.field_slide_slide_message_ids
 msgid "Messages and communication history"
-msgstr "Mensajes e historial de comunicación"
+msgstr "Historial de mensajes y de comunicación"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_mime_type
@@ -845,7 +845,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:website_slides.slides_channel_header
 #: selection:slide.channel,promote_strategy:0
 msgid "Most Voted"
-msgstr ""
+msgstr "Más Votada"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_category_name
@@ -864,7 +864,7 @@ msgstr ""
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slides_channel_header
 msgid "Newest"
-msgstr ""
+msgstr "Reciente"
 
 #. module: website_slides
 #: selection:slide.channel,promote_strategy:0
@@ -879,7 +879,7 @@ msgstr ""
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.channel_not_found
 msgid "No channel created or published yet."
-msgstr ""
+msgstr "No hay canales creados o publicados todavía."
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slide_detail_view
@@ -961,17 +961,17 @@ msgstr ""
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_6
 msgid "Odoo Marketing - part 1: ATTRACT"
-msgstr ""
+msgstr "Mercadeo Odoo - parte 1: ATRAER"
 
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_7
 msgid "Odoo Marketing - part 1: ATTRACT_2"
-msgstr ""
+msgstr "Mercadeo Odoo - parte 1: ATRAER_2"
 
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_8
 msgid "Odoo Marketing - part 1: ATTRACT_3"
-msgstr ""
+msgstr "Mercadeo Odoo - parte 1: ATRAER_3"
 
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_2
@@ -1135,7 +1135,7 @@ msgstr ""
 msgid ""
 "Review your channel settings to promote your most viewed or recent published"
 " presentation"
-msgstr ""
+msgstr "Revise la configuración de su canal para promover la presentación más vista o recientemente publicada"
 
 #. module: website_slides
 #: model:slide.slide,description:website_slides.slide_0
@@ -1150,14 +1150,14 @@ msgstr ""
 #: code:addons/website_slides/static/src/xml/website_slides.xml:70
 #, python-format
 msgid "Save and Publish"
-msgstr ""
+msgstr "Guardar y Publicar"
 
 #. module: website_slides
 #. openerp-web
 #: code:addons/website_slides/static/src/xml/website_slides.xml:69
 #, python-format
 msgid "Save as Draft"
-msgstr ""
+msgstr "Guardar como Borrador"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_slide_search
@@ -1213,7 +1213,7 @@ msgstr ""
 #. module: website_slides
 #: selection:slide.channel,visibility:0
 msgid "Show channel but restrict presentations"
-msgstr ""
+msgstr "Mostrar canales pero restringir presentaciones"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_slide_form
@@ -1249,7 +1249,7 @@ msgstr ""
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slides_search
 msgid "Sorry, but nothing matches your search criteria"
-msgstr ""
+msgstr "Lo sentimos, pero no hay coincidencias para su criterio de búsqueda"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_tag_form
@@ -1462,7 +1462,7 @@ msgstr "Visible en el Sitio Web"
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_slide_search
 msgid "Waiting for validation"
-msgstr ""
+msgstr "Esperando validación"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_slide_form
@@ -1520,7 +1520,7 @@ msgstr "Escribir un comentario..."
 #: code:addons/website_slides/static/src/js/slides_upload.js:115
 #, python-format
 msgid "You can not upload password protected file."
-msgstr "Usted no puede subir un archivo protegido con contraseña."
+msgstr "No puede subir un archivo protegido con contraseña."
 
 #. module: website_slides
 #. openerp-web

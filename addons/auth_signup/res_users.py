@@ -256,16 +256,22 @@ class res_users(osv.Model):
     def action_reset_password(self, cr, uid, ids, context=None):
         """ create signup token for each user, and send their signup url by email """
         # prepare reset password signup
-        res_partner = self.pool.get('res.partner')
-        partner_ids = [user.partner_id.id for user in self.browse(cr, uid, ids, context)]
-        res_partner.signup_prepare(cr, uid, partner_ids, signup_type="reset", expiration=now(days=+1), context=context)
-
         if not context:
             context = {}
+        create_mode = bool(context.get('create_user'))
+        res_partner = self.pool.get('res.partner')
+        partner_ids = [user.partner_id.id for user in self.browse(cr, uid, ids, context)]
+
+        # no time limit for initial invitation, only for reset password
+        expiration = False if create_mode else now(days=+1)
+
+        res_partner.signup_prepare(cr, uid, partner_ids, signup_type="reset", expiration=expiration, context=context)
+
+        context = dict(context or {})
 
         # send email to users with their signup url
         template = False
-        if context.get('create_user'):
+        if create_mode:
             try:
                 # get_object() raises ValueError if record does not exist
                 template = self.pool.get('ir.model.data').get_object(cr, uid, 'auth_signup', 'set_password_email')
@@ -278,6 +284,7 @@ class res_users(osv.Model):
         for user in self.browse(cr, uid, ids, context):
             if not user.email:
                 raise UserError(_("Cannot send email: user %s has no email address.") % user.name)
+            context['lang'] = user.lang                
             self.pool.get('mail.template').send_mail(cr, uid, template.id, user.id, force_send=True, raise_exception=True, context=context)
 
     def create(self, cr, uid, values, context=None):

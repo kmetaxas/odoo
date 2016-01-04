@@ -81,12 +81,16 @@ class account_abstract_payment(models.AbstractModel):
 
     def _compute_total_invoices_amount(self):
         """ Compute the sum of the residual of invoices, expressed in the payment currency """
-        total = 0
         payment_currency = self.currency_id or self.journal_id.currency_id or self.journal_id.company_id.currency_id
-        for inv in self._get_invoices():
-            total += inv.residual_company_signed
-        if self.company_id and self.company_id.currency_id != payment_currency:
-            total = self.company_id.currency_id.with_context(date=self.payment_date).compute(total, payment_currency)
+        invoices = self._get_invoices()
+
+        if all(inv.currency_id == payment_currency for inv in invoices):
+            total = sum(invoices.mapped('residual_signed'))
+        else:
+            total = sum(invoices.mapped('residual_company_signed'))
+            company_currency = self.company_id.currency_id if self.company_id else self.env.user.company_id.currency_id
+            if company_currency and company_currency != payment_currency:
+                total = company_currency.with_context(date=self.payment_date).compute(total, payment_currency)
         return abs(total)
 
 
@@ -191,7 +195,7 @@ class account_payment(models.Model):
     destination_journal_id = fields.Many2one('account.journal', string='Transfer To', domain=[('type', 'in', ('bank', 'cash'))])
 
     invoice_ids = fields.Many2many('account.invoice', 'account_invoice_payment_rel', 'payment_id', 'invoice_id', string="Invoices", copy=False, readonly=True)
-    has_invoices = fields.Boolean(compute="_get_has_invoices", help="Technical field used for usablity purposes")
+    has_invoices = fields.Boolean(compute="_get_has_invoices", help="Technical field used for usability purposes")
     payment_difference = fields.Monetary(compute='_compute_payment_difference', readonly=True)
     payment_difference_handling = fields.Selection([('open', 'Keep open'), ('reconcile', 'Mark invoice as fully paid')], default='open', string="Payment Difference", copy=False)
     writeoff_account_id = fields.Many2one('account.account', string="Difference Account", domain=[('deprecated', '=', False)], copy=False)

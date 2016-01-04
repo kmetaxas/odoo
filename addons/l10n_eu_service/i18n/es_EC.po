@@ -3,13 +3,14 @@
 # * l10n_eu_service
 # 
 # Translators:
+# Rick Hunter <rick_hunter_ec@yahoo.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-07 14:55+0000\n"
-"PO-Revision-Date: 2015-09-08 05:34+0000\n"
-"Last-Translator: Martin Trigaux\n"
+"PO-Revision-Date: 2015-12-28 05:30+0000\n"
+"Last-Translator: Rick Hunter <rick_hunter_ec@yahoo.com>\n"
 "Language-Team: Spanish (Ecuador) (http://www.transifex.com/odoo/odoo-9/language/es_EC/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +21,7 @@ msgstr ""
 #. module: l10n_eu_service
 #: model:ir.model.fields,field_description:l10n_eu_service.field_l10n_eu_service_wizard_done_country_ids
 msgid "Already Supported"
-msgstr ""
+msgstr "Ya soportada"
 
 #. module: l10n_eu_service
 #: model:ir.ui.view,arch_db:l10n_eu_service.eu_service_view
@@ -81,7 +82,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_eu_service.field_l10n_eu_service_service_tax_rate_display_name
 #: model:ir.model.fields,field_description:l10n_eu_service.field_l10n_eu_service_wizard_display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre a Mostrar"
 
 #. module: l10n_eu_service
 #: model:ir.model.fields,field_description:l10n_eu_service.field_l10n_eu_service_wizard_todo_country_ids
@@ -114,19 +115,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_eu_service.field_l10n_eu_service_service_tax_rate___last_update
 #: model:ir.model.fields,field_description:l10n_eu_service.field_l10n_eu_service_wizard___last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Fecha de modificación"
 
 #. module: l10n_eu_service
 #: model:ir.model.fields,field_description:l10n_eu_service.field_l10n_eu_service_service_tax_rate_write_uid
 #: model:ir.model.fields,field_description:l10n_eu_service.field_l10n_eu_service_wizard_write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Ultima Actualización por"
 
 #. module: l10n_eu_service
 #: model:ir.model.fields,field_description:l10n_eu_service.field_l10n_eu_service_service_tax_rate_write_date
 #: model:ir.model.fields,field_description:l10n_eu_service.field_l10n_eu_service_wizard_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Actualizado en"
 
 #. module: l10n_eu_service
 #: model:ir.model.fields,help:l10n_eu_service.field_l10n_eu_service_wizard_account_collected_id
