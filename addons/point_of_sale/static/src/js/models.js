@@ -1092,10 +1092,11 @@ exports.Orderline = Backbone.Model.extend({
     clone: function(){
         var orderline = new exports.Orderline({},{
             pos: this.pos,
-            order: null,
+            order: this.order,
             product: this.product,
             price: this.price,
         });
+        orderline.order = null;
         orderline.quantity = this.quantity;
         orderline.quantityStr = this.quantityStr;
         orderline.discount = this.discount;
@@ -1525,7 +1526,7 @@ exports.Order = Backbone.Model.extend({
         return this;
     },
     save_to_db: function(){
-        if (!this.init_locked) {
+        if (!this.temporary && !this.init_locked) {
             this.pos.db.save_unpaid_order(this);
         } 
     },

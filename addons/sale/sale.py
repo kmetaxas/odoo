@@ -85,7 +85,6 @@ class SaleOrder(models.Model):
         default_team_id = self.env['crm.team']._get_default_team_id()
         return self.env['crm.team'].browse(default_team_id)
 
-    @api.constrains('fiscal_position_id')
     @api.onchange('fiscal_position_id')
     def _compute_tax_id(self):
         """
@@ -313,6 +312,8 @@ class SaleOrder(models.Model):
                     line.invoice_line_create(invoices[group_key].id, line.qty_to_invoice)
 
         for invoice in invoices.values():
+            if not invoice.invoice_line_ids:
+                raise UserError(_('There is no invoicable line.'))
             # If invoice is negative, do a refund invoice instead
             if invoice.amount_untaxed < 0:
                 invoice.type = 'out_refund'
@@ -326,7 +327,12 @@ class SaleOrder(models.Model):
 
     @api.multi
     def action_draft(self):
-        self.filtered(lambda s: s.state in ['cancel', 'sent']).write({'state': 'draft'})
+        orders = self.filtered(lambda s: s.state in ['cancel', 'sent'])
+        orders.write({
+            'state': 'draft',
+            'procurement_group_id': False,
+        })
+        orders.mapped('order_line').mapped('procurement_ids').write({'sale_line_id': False})
 
     @api.multi
     def action_cancel(self):
@@ -552,7 +558,7 @@ class SaleOrderLine(models.Model):
             for proc in line.procurement_ids:
                 qty += proc.product_qty
             if float_compare(qty, line.product_uom_qty, precision_digits=precision) >= 0:
-                return False
+                continue
 
             if not line.order_id.procurement_group_id:
                 vals = line.order_id._prepare_procurement_group()
@@ -577,7 +583,9 @@ class SaleOrderLine(models.Model):
     def create(self, values):
         line = super(SaleOrderLine, self).create(values)
         if line.state == 'sale':
-            if line.product_id.track_service in self._get_analytic_track_service() or line.product_id.invoice_policy in self._get_analytic_invoice_policy() and not line.order_id.project_id:
+            if (not line.order_id.project_id and
+                (line.product_id.track_service in self._get_analytic_track_service() or
+                 line.product_id.invoice_policy in self._get_analytic_invoice_policy())):
                 line.order_id._create_analytic_account()
             line._action_procurement_create()
 
@@ -741,7 +749,8 @@ class SaleOrderLine(models.Model):
                 quantity=self.product_uom_qty,
                 date_order=self.order_id.date_order,
                 pricelist=self.order_id.pricelist_id.id,
-                uom=self.product_uom.id
+                uom=self.product_uom.id,
+                fiscal_position=self.env.context.get('fiscal_position')
             )
             self.price_unit = self.env['account.tax']._fix_tax_included_price(product.price, product.taxes_id, self.tax_id)
 
@@ -750,6 +759,15 @@ class SaleOrderLine(models.Model):
         if self.filtered(lambda x: x.state in ('sale', 'done')):
             raise UserError(_('You can not remove a sale order line.\nDiscard changes and try setting the quantity to 0.'))
         return super(SaleOrderLine, self).unlink()
+
+    def onchange_product_uom(self, cursor, user, ids, pricelist, product, qty=0,
+                             uom=False, qty_uos=0, uos=False, name='', partner_id=False,
+                             lang=False, update_tax=True, date_order=False, fiscal_position=False, context=None):
+        ctx = dict(context or {}, fiscal_position=fiscal_position)
+        return self.product_uom_change(cursor, user, ids, pricelist, product,
+                                      qty=qty, uom=uom, qty_uos=qty_uos, uos=uos, name=name,
+                                      partner_id=partner_id, lang=lang, update_tax=update_tax,
+                                      date_order=date_order, context=ctx)
 
     @api.multi
     def _get_delivered_qty(self):

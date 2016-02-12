@@ -3,7 +3,7 @@
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from openerp import api, fields, models, _
+from openerp import api, fields, models, _, SUPERUSER_ID
 from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 from openerp.tools.translate import _
 from openerp.tools.float_utils import float_is_zero, float_compare
@@ -150,7 +150,7 @@ class PurchaseOrder(models.Model):
     picking_type_id = fields.Many2one('stock.picking.type', 'Deliver To', states=READONLY_STATES, required=True, default=_default_picking_type,\
         help="This will determine picking type of incoming shipment")
     default_location_dest_id_usage = fields.Selection(related='picking_type_id.default_location_dest_id.usage', string='Destination Location Type',\
-        help="Technical field used to display the Drop Ship Address")
+        help="Technical field used to display the Drop Ship Address", readonly=True)
     group_id = fields.Many2one('procurement.group', string="Procurement Group")
 
     @api.model
@@ -182,7 +182,7 @@ class PurchaseOrder(models.Model):
     @api.multi
     def unlink(self):
         for order in self:
-            if order.state not in ['draft', 'cancel']:
+            if not order.state == 'cancel':
                 raise UserError(_('In order to delete a purchase order, you must cancel it first.'))
         return super(PurchaseOrder, self).unlink()
 
@@ -398,15 +398,28 @@ class PurchaseOrder(models.Model):
 
         #override the context to get rid of the default filtering
         result['context'] = {'type': 'in_invoice', 'default_purchase_id': self.id}
-        result['domain'] = "[('purchase_id', '=', %s)]" % self.id
-        invoice_ids = sum([order.invoice_ids.ids for order in self], [])
+
+        if not self.invoice_ids:
+            # Choose a default account journal in the same currency in case a new invoice is created
+            journal_domain = [
+                ('type', '=', 'purchase'),
+                ('company_id', '=', self.company_id.id),
+                ('currency_id', '=', self.currency_id.id),
+            ]
+            default_journal_id = self.env['account.journal'].search(journal_domain, limit=1)
+            if default_journal_id:
+                result['context']['default_journal_id'] = default_journal_id.id
+        else:
+            # Use the same account journal than a previous invoice
+            result['context']['default_journal_id'] = self.invoice_ids[0].journal_id.id
+
         #choose the view_mode accordingly
-        if len(invoice_ids) > 1:
-            result['domain'] = "[('id','in',[" + ','.join(map(str, invoice_ids)) + "])]"
-        elif len(invoice_ids) == 1:
+        if len(self.invoice_ids) != 1:
+            result['domain'] = "[('id', 'in', " + str(self.invoice_ids.ids) + ")]"
+        elif len(self.invoice_ids) == 1:
             res = self.env.ref('account.invoice_supplier_form', False)
             result['views'] = [(res and res.id or False, 'form')]
-            result['res_id'] = invoice_ids and invoice_ids[0] or False
+            result['res_id'] = self.invoice_ids.id
         return result
 
 
@@ -434,6 +447,7 @@ class PurchaseOrderLine(models.Model):
 
     @api.depends('order_id.state', 'move_ids.state')
     def _compute_qty_received(self):
+        productuom = self.env['product.uom']
         for line in self:
             if line.order_id.state not in ['purchase', 'done']:
                 line.qty_received = 0.0
@@ -441,11 +455,47 @@ class PurchaseOrderLine(models.Model):
             if line.product_id.type not in ['consu', 'product']:
                 line.qty_received = line.product_qty
                 continue
-            total = 0.0
-            for move in line.move_ids:
-                if move.state == 'done':
-                    total += move.product_uom_qty
+            bom_delivered = self.sudo()._get_bom_delivered(line.sudo())
+            if bom_delivered and any(bom_delivered.values()):
+                total = self.product_qty
+            elif bom_delivered:
+                total = 0.0
+            else:
+                total = 0.0
+                for move in line.move_ids:
+                    if move.state == 'done':
+                        if move.product_uom != line.product_uom:
+                            total += productuom._compute_qty_obj(move.product_uom, move.product_uom_qty, line.product_uom)
+                        else:
+                            total += move.product_uom_qty
             line.qty_received = total
+
+    def _get_bom_delivered(self, line):
+        precision = self.env['decimal.precision'].precision_get('Product Unit of Measure')
+        bom_delivered = {}
+        # There is no dependencies between purchase and mrp
+        if 'mrp.bom' in self.env:
+            # In the case of a kit, we need to check if all components are shipped. We use a all or
+            # nothing policy. A product can have several BoMs, we don't know which one was used when the
+            # delivery was created.
+            for bom in line.product_id.product_tmpl_id.bom_ids:
+                if bom.type != 'phantom':
+                    continue
+                bom_delivered[bom.id] = False
+                bom_exploded = self.env['mrp.bom']._bom_explode(bom, line.product_id, line.product_qty)[0]
+                for bom_line in bom_exploded:
+                    qty = 0.0
+                    for move in line.move_ids:
+                        if move.state == 'done' and move.product_id.id == bom_line.get('product_id', False):
+                            qty += self.env['product.uom']._compute_qty_obj(move.product_uom, move.product_uom_qty, self.product_uom)
+                    if float_compare(qty, bom_line['product_qty'], precision_digits=precision) < 0:
+                        bom_delivered[bom.id] = False
+                        break
+                    else:
+                        bom_delivered[bom.id] = True
+        return bom_delivered
+
+
 
     name = fields.Text(string='Description', required=True)
     product_qty = fields.Float(string='Quantity', digits=dp.get_precision('Product Unit of Measure'), required=True)
@@ -581,7 +631,11 @@ class PurchaseOrderLine(models.Model):
             self.name += '\n' + product_lang.description_purchase
 
         fpos = self.order_id.fiscal_position_id
-        self.taxes_id = fpos.map_tax(self.product_id.supplier_taxes_id)
+        if self.env.uid == SUPERUSER_ID:
+            company_id = self.env.user.company_id.id
+            self.taxes_id = fpos.map_tax(self.product_id.supplier_taxes_id.filtered(lambda r: r.company_id.id == company_id))
+        else:
+            self.taxes_id = fpos.map_tax(self.product_id.supplier_taxes_id)
 
         self._suggest_quantity()
         self._onchange_quantity()
@@ -748,7 +802,10 @@ class ProcurementOrder(models.Model):
 
         taxes = self.product_id.supplier_taxes_id
         fpos = po.fiscal_position_id
-        taxes_id = fpos.map_tax(taxes).ids if fpos else []
+        taxes_id = fpos.map_tax(taxes) if fpos else self.env['account.tax'].browse()
+        if taxes_id:
+            companies = self.env['res.company'].search([('id', 'child_of', self.company_id.id)])
+            taxes_id = taxes_id.filtered(lambda x: x.company_id in companies)
 
         price_unit = self.env['account.tax']._fix_tax_included_price(seller.price, self.product_id.supplier_taxes_id, taxes_id) if seller else 0.0
         if price_unit and seller and po.currency_id and seller.currency_id != po.currency_id:
@@ -774,7 +831,7 @@ class ProcurementOrder(models.Model):
             'product_uom': self.product_uom.id,
             'price_unit': price_unit,
             'date_planned': date_planned,
-            'taxes_id': [(6, 0, taxes_id)],
+            'taxes_id': [(6, 0, taxes_id.ids)],
             'procurement_ids': [(4, self.id)],
             'order_id': po.id,
         }
@@ -794,6 +851,7 @@ class ProcurementOrder(models.Model):
             'partner_id': partner.id,
             'picking_type_id': self.rule_id.picking_type_id.id,
             'company_id': self.company_id.id,
+            'currency_id': partner.property_purchase_currency_id.id or self.env.user.company_id.currency_id.id,
             'dest_address_id': self.partner_dest_id.id,
             'origin': self.origin,
             'payment_term_id': partner.property_supplier_payment_term_id.id,
