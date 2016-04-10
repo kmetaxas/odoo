@@ -1365,13 +1365,17 @@ class CSVExport(ExportFormat, http.Controller):
         for data in rows:
             row = []
             for d in data:
-                if isinstance(d, basestring):
-                    d = d.replace('\n',' ').replace('\t',' ')
+                if isinstance(d, unicode):
                     try:
                         d = d.encode('utf-8')
                     except UnicodeError:
                         pass
                 if d is False: d = None
+
+                # Spreadsheet apps tend to detect formulas on leading =, + and -
+                if type(d) is str and d.startswith(('=', '-', '+')):
+                    d = "'" + d
+
                 row.append(d)
             writer.writerow(row)
 

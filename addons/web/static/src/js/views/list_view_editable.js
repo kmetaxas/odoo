@@ -82,17 +82,20 @@ var Editor = Widget.extend({
     is_creating: function () {
         return (this.is_editing() && !this.record.id);
     },
-    edit: function (record, configureField, options) {
+    edit: function (record, configureField) {
+        var self = this;
         // TODO: specify sequence of edit calls
         var loaded;
         if(record) {
-            loaded = this.form.trigger('load_record', _.extend({}, record))
+            this.form.trigger('load_record', _.extend({}, record));
+            loaded = this.form.record_loaded;
         } else {
-            loaded = this.form.load_defaults();
+            loaded = this.form.load_defaults().then(function() {
+                return self.form.record_loaded;
+            });
         }
 
-        var self = this;
-        return $.when(loaded).then(function () {
+        return loaded.then(function () {
             return self.do_show({reload: false});
         }).then(function () {
             self.record = self.form.datarecord;
@@ -285,7 +288,7 @@ ListView.include(/** @lends instance.web.ListView# */{
         var add_button = !this.$buttons; // Ensures that this is only done once
         var result = this._super.apply(this, arguments); // Sets this.$buttons
 
-        if (add_button && this.editable()) {
+        if (add_button && (this.editable() || this.grouped)) {
             var self = this;
             this.$buttons
                 .off('click', '.o_list_button_save')
