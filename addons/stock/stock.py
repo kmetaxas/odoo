@@ -61,7 +61,7 @@ class stock_location(osv.osv):
             res[m.id] = m.name
             parent = m.location_id
             while parent:
-                res[m.id] = parent.name + ' / ' + res[m.id]
+                res[m.id] = parent.name + '/' + res[m.id]
                 parent = parent.location_id
         return res
 
@@ -913,7 +913,8 @@ class stock_picking(models.Model):
                 location_dest_id = picking_type.default_location_dest_id.id
 
             res['value'] = {'location_id': location_id,
-                            'location_dest_id': location_dest_id,}
+                            'location_dest_id': location_dest_id,
+                            'picking_type_code': picking_type.code,}
         return res
 
     def _default_location_destination(self):
@@ -927,6 +928,15 @@ class stock_picking(models.Model):
         picking_type_id = self._context.get('default_picking_type_id')
         picking_type = self.env['stock.picking.type'].browse(picking_type_id)
         return picking_type.default_location_src_id
+
+    @api.model
+    def default_get(self, fields):
+        res = super(stock_picking, self).default_get(fields)
+        if self._context.get('default_picking_type_id') and 'picking_type_id' in fields:
+            picking_type = self.env['stock.picking.type'].browse(res['picking_type_id'])
+            res['picking_type_code'] = picking_type.code
+        return res
+
 
     _columns = {
         'name': fields.char('Reference', select=True, states={'done': [('readonly', True)], 'cancel': [('readonly', True)]}, copy=False),
@@ -3796,7 +3806,7 @@ class stock_warehouse(osv.osv):
         wh_loc_id = location_obj.create(cr, uid, loc_vals, context=context)
         vals['view_location_id'] = wh_loc_id
         #create all location
-        def_values = self.default_get(cr, uid, {'reception_steps', 'delivery_steps'})
+        def_values = self.default_get(cr, uid, ['reception_steps', 'delivery_steps'])
         reception_steps = vals.get('reception_steps',  def_values['reception_steps'])
         delivery_steps = vals.get('delivery_steps', def_values['delivery_steps'])
         context_with_inactive = context.copy()

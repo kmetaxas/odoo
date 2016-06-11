@@ -3,13 +3,14 @@
 # * stock
 # 
 # Translators:
+# Aleksandar Vangelovski <aleksandarv@hbee.eu>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-13 09:40+0000\n"
-"PO-Revision-Date: 2016-04-08 10:42+0000\n"
-"Last-Translator: Martin Trigaux\n"
+"PO-Revision-Date: 2016-05-31 13:43+0000\n"
+"Last-Translator: Aleksandar Vangelovski <aleksandarv@hbee.eu>\n"
 "Language-Team: Macedonian (http://www.transifex.com/odoo/odoo-9/language/mk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -208,7 +209,7 @@ msgstr ""
 msgid ""
 "<span class=\"label label-default text-center odoo_purple\">Process the "
 "products</span>"
-msgstr ""
+msgstr "<span class=\"label label-default text-center odoo_purple\">Процесирај ги производите</span>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -349,13 +350,13 @@ msgstr "<span>Приказ</span>"
 msgid ""
 "<span>You need to install the Accounting or Purchases app to manage "
 "vendors.</span>"
-msgstr ""
+msgstr "<span>Ви треба да ја инсталирате сметководство или набавки апликацијата за да управувате со добавувачи.</span>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid ""
 "<span>You need to install the Purchases Management app for this flow.</span>"
-msgstr ""
+msgstr "<span>Треба да ја инсталирате апликацијата за управување со набавки за овој тек.</span>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -416,12 +417,12 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_inventory
 msgid "<strong>Date</strong>"
-msgstr ""
+msgstr "<strong>Датум</strong>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_picking
 msgid "<strong>Destination</strong>"
-msgstr ""
+msgstr "<strong>Дестинација</strong>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -533,13 +534,13 @@ msgstr ""
 #: model:ir.ui.view,arch_db:stock.report_inventory
 #: model:ir.ui.view,arch_db:stock.report_picking
 msgid "<strong>Quantity</strong>"
-msgstr ""
+msgstr "<strong>Квантитет</strong>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_delivery_document
 #: model:ir.ui.view,arch_db:stock.report_picking
 msgid "<strong>Scheduled Date</strong>"
-msgstr ""
+msgstr "<strong>Закажан датум</strong>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_delivery_document
@@ -578,7 +579,7 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_inventory
 msgid "<strong>Total Quantity</strong>"
-msgstr ""
+msgstr "<strong>Вкупен квантитет</strong>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -630,7 +631,7 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Accurate visibility on all your operations"
-msgstr ""
+msgstr "Точна прегледност на сите ваши операции"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_picking_message_needaction
@@ -961,7 +962,7 @@ msgstr ""
 #. module: stock
 #: selection:product.template,tracking:0
 msgid "By Unique Serial Number"
-msgstr ""
+msgstr "По единствен сериски број"
 
 #. module: stock
 #: code:addons/stock/stock.py:2162
@@ -969,7 +970,7 @@ msgstr ""
 msgid ""
 "By changing this quantity here, you accept the new quantity as complete: "
 "Odoo will not automatically generate a back order."
-msgstr ""
+msgstr "Со промена на количината, целосно ја прифаќате новата количина: Odoo нема автоматски да генерира заостаната обврска."
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -1261,7 +1262,7 @@ msgstr "Потврдени движења"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Congratulations!"
-msgstr ""
+msgstr "Честитки!"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_stock_lines_date_search
@@ -1326,7 +1327,7 @@ msgstr "Креирај добавувачи"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Create a Quotation"
-msgstr ""
+msgstr "Креирај понуда"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -1679,7 +1680,7 @@ msgid ""
 "where to store the products. This method can be enforced at the product "
 "category level, and a fallback is made on the parent locations if none is "
 "set here."
-msgstr "Го дефинира стандардниот метод на предлагање на точната локација (полица) за сместување на производот. Овој метод може да се наметне преку категорија на производ, и се повикува на главните локации ако ниту една не е подесена овде."
+msgstr "Го дефинира стандардниот метод на предлагање на точната локација (полица) за сместување на производот. Овој метод може да се наметне преку категорија на производ, и се повикува на надредните локации ако ниту една не е подесена овде."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_location_removal_strategy_id
@@ -1688,7 +1689,7 @@ msgid ""
 "where to take the products from, which lot etc. for this location. This "
 "method can be enforced at the product category level, and a fallback is made"
 " on the parent locations if none is set here."
-msgstr "Го дефинира стандардниот метод на предлагање на точната локација (полица) од каде да се одземе производот. Овој метод може да се наметне преку категорија на производ, и се повикува на главните локации ако ниту една не е подесена овде."
+msgstr "Го дефинира стандардниот метод на предлагање на точната локација (полица) за од каде да се земат производите. Овој метод може да се наметне преку категорија на производ, и се повикува на надредните локации ако ниту една не е подесена овде."
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.stock_location_path_form
@@ -1965,7 +1966,7 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Edit its details or add new ones"
-msgstr ""
+msgstr "Уреди ги деталите или додај нови"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -3057,7 +3058,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:stock.field_stock_location_parent_left
 #: model:ir.model.fields,field_description:stock.field_stock_quant_package_parent_left
 msgid "Left Parent"
-msgstr "Лев Родител"
+msgstr "Лев надреден елемент"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_location_company_id
@@ -3610,7 +3611,7 @@ msgstr "Не е дефинирана локација на извор!"
 #. module: stock
 #: selection:stock.config.settings,group_product_variant:0
 msgid "No variants on products"
-msgstr ""
+msgstr "Нема варијанти на производи"
 
 #. module: stock
 #: model:stock.location,name:stock.stock_location_8
@@ -4059,12 +4060,12 @@ msgstr "Параметри"
 #: model:ir.model.fields,field_description:stock.field_stock_location_location_id
 #: model:ir.ui.view,arch_db:stock.view_location_search
 msgid "Parent Location"
-msgstr "Локација на родител"
+msgstr "Надредна локација"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_quant_package_parent_id
 msgid "Parent Package"
-msgstr "Главен пакет"
+msgstr "Надреден пакет"
 
 #. module: stock
 #: selection:stock.picking,move_type:0
@@ -4222,7 +4223,7 @@ msgstr "Листа за требување"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.procurement_group_form_view_herited
 msgid "Pickings"
-msgstr ""
+msgstr "Требувања"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_picking_internal_search
@@ -4990,7 +4991,7 @@ msgstr "Обратен трансфер"
 #: model:ir.model.fields,field_description:stock.field_stock_location_parent_right
 #: model:ir.model.fields,field_description:stock.field_stock_quant_package_parent_right
 msgid "Right Parent"
-msgstr "Десен Родител"
+msgstr "Десен надреден елемент"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_procurement_rule_route_id
@@ -6263,7 +6264,7 @@ msgstr "Непрочитани Пораки"
 #: model:ir.model.fields,field_description:stock.field_stock_picking_message_unread_counter
 #: model:ir.model.fields,field_description:stock.field_stock_production_lot_message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Тезга на непрочитаните пораки"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_picking_form
@@ -6363,7 +6364,7 @@ msgstr "Добавувачи"
 #: model:ir.model.fields,field_description:stock.field_res_partner_property_stock_supplier
 #: selection:stock.location,usage:0
 msgid "Vendor Location"
-msgstr ""
+msgstr "Локација на добавувач"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_location_search
@@ -7001,7 +7002,7 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "the list of products"
-msgstr ""
+msgstr "листата на производи"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner

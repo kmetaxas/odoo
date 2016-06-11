@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-09 09:18+0000\n"
-"PO-Revision-Date: 2016-04-09 07:26+0000\n"
+"PO-Revision-Date: 2016-05-19 06:18+0000\n"
 "Last-Translator: Simone Bernini <simone@aperturelabs.it>\n"
 "Language-Team: Italian (http://www.transifex.com/odoo/odoo-9/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -6766,7 +6766,7 @@ msgstr "Proprietà dell'Azienda"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_company_company_registry
 msgid "Company Registry"
-msgstr ""
+msgstr "Registro delle Imprese"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_company_rml_header1
@@ -8072,7 +8072,7 @@ msgid ""
 "Display and manage the list of all countries that can be assigned to your "
 "partner records. You can create or delete countries to make sure the ones "
 "you are working on will be maintained."
-msgstr ""
+msgstr "Mostra e gestisce la lista di tutti i paesi che possono essere assegnati ai partner. È possibile creare o cancellare paesi per assicurarvi che quelli si cui state lavorando verranno mantenuti."
 
 #. module: base
 #: model:res.partner.category,name:base.res_partner_category_13
@@ -8159,7 +8159,7 @@ msgstr ""
 #: code:addons/base/workflow/workflow.py:24
 #, python-format
 msgid "Duplicating workflows is not possible, please create a new workflow"
-msgstr ""
+msgstr "La duplicazione dei workflow non è possibile, è necessario creare un nuovo workflow"
 
 #. module: base
 #: code:addons/base/ir/ir_qweb.py:930
@@ -8276,7 +8276,7 @@ msgstr ""
 #: model:res.groups,name:base.group_user
 #: model:res.partner.category,name:base.res_partner_category_3
 msgid "Employee"
-msgstr ""
+msgstr "Dipendente"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_appraisal
@@ -8286,7 +8286,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_contract
 msgid "Employee Contracts"
-msgstr ""
+msgstr "Contratti Dipendente"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr
@@ -9122,7 +9122,7 @@ msgstr ""
 #: model:ir.ui.menu,name:base.menu_config
 #: model:ir.ui.view,arch_db:base.view_window_action_form
 msgid "General Settings"
-msgstr ""
+msgstr "Impostazioni Generali"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.ir_property_view_search
@@ -11393,7 +11393,7 @@ msgid ""
 "Manual: Launched manually.\n"
 "Automatic: Runs whenever the system is reconfigured.\n"
 "Launch Manually Once: after having been launched manually, it sets automatically to Done."
-msgstr ""
+msgstr "Manuale: lanciato manualmente.\nAutomatico: parte ogni volta che il sistema + riconfigurato.\nLanciato manualmente una volta: dopo che è stato lanciato manualmente, viene settato automaticamente su Fatto."
 
 #. module: base
 #: model:res.partner.category,name:base.res_partner_category_14
@@ -11409,7 +11409,7 @@ msgstr "Produzione"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mrp_operations
 msgid "Manufacturing Operations"
-msgstr ""
+msgstr "Operazioni Produzione"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_mrp
@@ -12372,7 +12372,7 @@ msgstr ""
 msgid ""
 "Odoo will automatically adds some '0' on the left of the 'Next Number' to "
 "get the required padding size."
-msgstr ""
+msgstr "Odoo aggiungerà automaticamente alcuni '0' sulla parte a sinistra del 'Prossimo numero' per raggiungere la corretta lunghezza del formato numerico."
 
 #. module: base
 #: model:res.partner.category,name:base.res_partner_category_12
@@ -12745,7 +12745,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_ui_menu_parent_left
 msgid "Parent Left"
-msgstr ""
+msgstr "Genitore Sinistro"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_ui_menu_parent_id
@@ -13046,7 +13046,7 @@ msgstr ""
 msgid ""
 "Please use the change password wizard (in User Preferences or User menu) to "
 "change your own password."
-msgstr ""
+msgstr "Prego utilizzare la procedura guidata di modifica password (in Preferenze utente o Menu utente) per la modificare la propria password."
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_point_of_sale
@@ -13885,7 +13885,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_window_multi
 msgid "Restrict to lists"
-msgstr ""
+msgstr "Limita agli elenci"
 
 #. module: base
 #: model:res.partner.category,name:base.res_partner_category_16
@@ -14308,7 +14308,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_act_server_wkf_transition_id
 msgid "Select the workflow signal to trigger."
-msgstr ""
+msgstr "Seleziona il segnale del workflow da attivare."
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_partner_use_parent_address
@@ -14583,12 +14583,12 @@ msgstr "Sierra Leone"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_wkf_transition_signal
 msgid "Signal (Button Name)"
-msgstr ""
+msgstr "Segnale (Nome Pulsante)"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_wkf_activity_signal_send
 msgid "Signal (subflow.*)"
-msgstr ""
+msgstr "Segnale (sottoflusso.*)"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_server_wkf_transition_id
@@ -15089,7 +15089,7 @@ msgstr ""
 #. module: base
 #: model:ir.ui.view,arch_db:base.edit_menu_access
 msgid "Submenus"
-msgstr ""
+msgstr "Sottomenu"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_contract
@@ -15377,7 +15377,7 @@ msgstr "Nome Tecnico"
 #: model:ir.module.category,name:base.module_category_technical_settings
 #: model:ir.ui.view,arch_db:base.user_groups_view
 msgid "Technical Settings"
-msgstr ""
+msgstr "Configurazioni Tecniche"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_partner_company_type
@@ -15657,7 +15657,7 @@ msgstr ""
 msgid ""
 "The model that will receive the workflow signal. Note that it should have a "
 "workflow associated with it."
-msgstr ""
+msgstr "Il modello che riceverà il segnale del workflow. Attenzione che deve avere un workflow associato."
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_model_fields_model_id
@@ -15786,7 +15786,7 @@ msgstr "L'operazione richiesta non può essere completata a causa di restrizioni
 msgid ""
 "The second argument of the many2many field %s must be a SQL table !You used "
 "%s, which is not a valid SQL table name."
-msgstr ""
+msgstr "Il secondo argomento del campo molti a molti %s deve essere una tabella SQL! È stato usato %s, che non è una valido nome di tabella SQL."
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_base_language_install
@@ -15968,7 +15968,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_timesheet_sheet
 msgid "Timesheets"
-msgstr ""
+msgstr "Timesheet"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_timesheet_sheet
@@ -15990,7 +15990,7 @@ msgstr "Offset fuso orario"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_web_tip
 msgid "Tips"
-msgstr ""
+msgstr "Suggerimenti"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner_title
@@ -16530,7 +16530,7 @@ msgstr ""
 #. module: base
 #: model:ir.ui.view,arch_db:base.res_lang_tree
 msgid "Update Terms"
-msgstr ""
+msgstr "Aggiorna i termini"
 
 #. module: base
 #: selection:ir.actions.server,use_write:0
@@ -16985,7 +16985,7 @@ msgstr "Avvisi"
 #: model:ir.ui.view,arch_db:base.view_base_module_upgrade_install
 msgid ""
 "We suggest to reload the menu tab to see the new menus (Ctrl+T then Ctrl+R)."
-msgstr ""
+msgstr "Suggeriamo di ricaricare il menu per vedere le nuove voci aggiunte (CTRL + T poi CTRL + R)."
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_web
@@ -17202,7 +17202,7 @@ msgid ""
 " node or arrow, you can only change fields that are empty or set to the "
 "default value. If you don't do that, your customization will be overwrited "
 "at the next update or upgrade to a future version of Odoo."
-msgstr ""
+msgstr "Quando si personalizza un workflow prestare attenzione a non modificare un nodo o collegamento esistente ma piuttosto aggiungere nuovi nodi e collegamenti. Se è assolutamente necessario modificare un nodo o un collegamento, è possibile modificare solamente i campi che sono vuoti o impostati al valore di default. Se quanto sopra non viene rispettato, la personalizzazione sarà sovrascritta al prossimo aggiornamento o all'aggiornamento alla prossima versione di Odoo."
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_act_server_sequence
@@ -17259,12 +17259,12 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,field_description:base.field_change_password_user_wizard_id
 msgid "Wizard"
-msgstr ""
+msgstr "Procedura guidata"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.config_wizard_step_view_search
 msgid "Wizards to be Launched"
-msgstr ""
+msgstr "Procedura guidata da lanciare"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
@@ -17291,12 +17291,12 @@ msgstr ""
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_workflow_activity_search
 msgid "Workflow Activity"
-msgstr ""
+msgstr "Attività Workflow"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_workflow_diagram
 msgid "Workflow Editor"
-msgstr ""
+msgstr "Editor del Workflow"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_workflow_instance_form
@@ -17315,7 +17315,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:base.view_workflow_workitem_search
 #: model:ir.ui.view,arch_db:base.view_workflow_workitem_tree
 msgid "Workflow Workitems"
-msgstr ""
+msgstr "Oggetti di Lavoro del Workflow"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_workflow_form
@@ -18116,7 +18116,7 @@ msgstr ""
 #. module: base
 #: model:ir.model,name:base.model_res_config_settings
 msgid "res.config.settings"
-msgstr ""
+msgstr "res.config.settings"
 
 #. module: base
 #: model:ir.model,name:base.model_res_partner_title
@@ -18181,7 +18181,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_workflow
 msgid "test-workflow"
-msgstr ""
+msgstr "test-workflow"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_convert
@@ -18298,7 +18298,7 @@ msgstr ""
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
 msgid "workflow: Workflow engine"
-msgstr ""
+msgstr "workflow: motore workflow"
 
 #. module: base
 #: code:addons/base/ir/ir_fields.py:144
