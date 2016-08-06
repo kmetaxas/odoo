@@ -128,7 +128,7 @@ class AccountAccount(models.Model):
         if name:
             domain = ['|', ('code', '=ilike', name + '%'), ('name', operator, name)]
             if operator in expression.NEGATIVE_TERM_OPERATORS:
-                domain = ['&'] + domain
+                domain = ['&', '!'] + domain[1:]
         accounts = self.search(domain + args, limit=limit)
         return accounts.name_get()
 
@@ -533,6 +533,20 @@ class AccountTax(models.Model):
         ('name_company_uniq', 'unique(name, company_id, type_tax_use)', 'Tax names must be unique !'),
     ]
 
+    @api.multi
+    def unlink(self):
+        company_id = self.env.user.company_id.id
+        ir_values = self.env['ir.values']
+        supplier_taxes_id = set(ir_values.get_default('product.template', 'supplier_taxes_id', company_id=company_id))
+        deleted_sup_tax = self.filtered(lambda tax: tax.id in supplier_taxes_id)
+        if deleted_sup_tax:
+            ir_values.sudo().set_default('product.template', "supplier_taxes_id", list(supplier_taxes_id - set(deleted_sup_tax.ids)), for_all_users=True, company_id=company_id)
+        taxes_id = set(self.env['ir.values'].get_default('product.template', 'taxes_id', company_id=company_id))
+        deleted_tax = self.filtered(lambda tax: tax.id in taxes_id)
+        if deleted_tax:
+            ir_values.sudo().set_default('product.template', "taxes_id", list(taxes_id - set(deleted_tax.ids)), for_all_users=True, company_id=company_id)
+        return super(AccountTax, self).unlink()
+
     @api.one
     @api.constrains('children_tax_ids', 'type_tax_use')
     def _check_children_scope(self):
@@ -588,13 +602,20 @@ class AccountTax(models.Model):
         if self.price_include:
             self.include_base_amount = True
 
+    def get_grouping_key(self, invoice_tax_val):
+        """ Returns a string that will be used to group account.invoice.tax sharing the same properties"""
+        self.ensure_one()
+        return str(invoice_tax_val['tax_id']) + '-' + str(invoice_tax_val['account_id']) + '-' + str(invoice_tax_val['account_analytic_id'])
+
     def _compute_amount(self, base_amount, price_unit, quantity=1.0, product=None, partner=None):
         """ Returns the amount of a single tax. base_amount is the actual amount on which the tax is applied, which is
             price_unit * quantity eventually affected by previous taxes (if tax is include_base_amount XOR price_include)
         """
         self.ensure_one()
         if self.amount_type == 'fixed':
-            return math.copysign(self.amount, base_amount) * quantity
+            # Use copysign to take into account the sign of the base amount which includes the sign
+            # of the quantity and the sign of the price_unit
+            return math.copysign(quantity, base_amount) * self.amount
         if (self.amount_type == 'percent' and not self.price_include) or (self.amount_type == 'division' and self.price_include):
             return base_amount * self.amount / 100
         if self.amount_type == 'percent' and self.price_include:

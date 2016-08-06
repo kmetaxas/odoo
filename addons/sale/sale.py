@@ -60,7 +60,8 @@ class SaleOrder(models.Model):
             # Search for refunds as well
             refund_ids = self.env['account.invoice'].browse()
             if invoice_ids:
-                refund_ids = refund_ids.search([('type', '=', 'out_refund'), ('origin', 'in', invoice_ids.mapped('number')), ('origin', '!=', False)])
+                for inv in invoice_ids:
+                    refund_ids += refund_ids.search([('type', '=', 'out_refund'), ('origin', '=', inv.number), ('origin', '!=', False), ('journal_id', '=', inv.journal_id.id)])
 
             line_invoice_status = [line.invoice_status for line in order.order_line]
 
@@ -98,7 +99,7 @@ class SaleOrder(models.Model):
         for order in self:
             order.order_line._compute_tax_id()
 
-    name = fields.Char(string='Order Reference', required=True, copy=False, readonly=True, index=True, default=lambda self: _('New'))
+    name = fields.Char(string='Order Reference', required=True, copy=False, readonly=True, states={'draft': [('readonly', False)]}, index=True, default=lambda self: _('New'))
     origin = fields.Char(string='Source Document', help="Reference of the document that generated this sales order request.")
     client_order_ref = fields.Char(string='Customer Reference', copy=False)
 
@@ -207,8 +208,9 @@ class SaleOrder(models.Model):
             'payment_term_id': self.partner_id.property_payment_term_id and self.partner_id.property_payment_term_id.id or False,
             'partner_invoice_id': addr['invoice'],
             'partner_shipping_id': addr['delivery'],
-            'note': self.with_context(lang=self.partner_id.lang).env.user.company_id.sale_note,
         }
+        if self.env.user.company_id.sale_note:
+            values['note'] = self.with_context(lang=self.partner_id.lang).env.user.company_id.sale_note
 
         if self.partner_id.user_id:
             values['user_id'] = self.partner_id.user_id.id

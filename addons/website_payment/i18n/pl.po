@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-07 14:41+0000\n"
-"PO-Revision-Date: 2016-06-03 10:40+0000\n"
+"PO-Revision-Date: 2016-06-27 10:33+0000\n"
 "Last-Translator: Piotr Szlązak <szlazakpiotr@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/odoo/odoo-9/language/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "Konfiguruj beneficjenta"
 #. module: website_payment
 #: model:ir.model.fields,field_description:website_payment.field_account_config_settings_default_acquirer
 msgid "Default Acquirer"
-msgstr ""
+msgstr "nieobecne wyzwania"
 
 #. module: website_payment
 #: model:ir.model.fields,help:website_payment.field_account_config_settings_default_acquirer
@@ -59,12 +59,12 @@ msgstr ""
 #. module: website_payment
 #: model:ir.ui.view,arch_db:website_payment.pay_methods
 msgid "Delete <span class=\"fa fa-long-arrow-right\"/>"
-msgstr ""
+msgstr "Usuń <span class=\"fa fa-long-arrow-right\"/>"
 
 #. module: website_payment
 #: model:ir.ui.view,arch_db:website_payment.pay_methods
 msgid "Delete a payment method:"
-msgstr ""
+msgstr "Usuń metodę płatności:"
 
 #. module: website_payment
 #: model:ir.ui.view,arch_db:website_payment.website_settings_payment
@@ -116,7 +116,7 @@ msgstr "Metody płatności"
 #. module: website_payment
 #: model:ir.ui.view,arch_db:website_payment.confirm
 msgid "Payment processed by"
-msgstr ""
+msgstr "Zapłatę wykonano przez"
 
 #. module: website_payment
 #: model:ir.ui.view,arch_db:website_payment.confirm
@@ -153,4 +153,4 @@ msgstr "account.config.settings"
 #: model:ir.ui.view,arch_db:website_payment.confirm
 #: model:ir.ui.view,arch_db:website_payment.pay
 msgid "payment_provider_logo"
-msgstr ""
+msgstr "payment_provider_logo"

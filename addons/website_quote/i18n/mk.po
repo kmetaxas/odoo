@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-18 12:33+0000\n"
-"PO-Revision-Date: 2016-06-03 14:45+0000\n"
+"PO-Revision-Date: 2016-07-28 13:33+0000\n"
 "Last-Translator: Aleksandar Vangelovski <aleksandarv@hbee.eu>\n"
 "Language-Team: Macedonian (http://www.transifex.com/odoo/odoo-9/language/mk/)\n"
 "MIME-Version: 1.0\n"
@@ -149,7 +149,7 @@ msgstr ""
 #. module: website_quote
 #: model:ir.ui.view,arch_db:website_quote.so_quotation
 msgid "<i class=\"fa fa-check\"/> Accept"
-msgstr ""
+msgstr "<i class=\"fa fa-check\"/> Прифати"
 
 #. module: website_quote
 #: model:ir.ui.view,arch_db:website_quote.so_quotation
@@ -182,7 +182,7 @@ msgstr ""
 msgid ""
 "<i>You will be able to develop a full application with backend and user "
 "interface.</i>"
-msgstr ""
+msgstr "<i>Ќе бидете во можност да создадете целосна апликација со бекенд и кориснички интерфејс.</i>"
 
 #. module: website_quote
 #: model:sale.quote.line,website_description:website_quote.website_sale_order_line_2
@@ -762,7 +762,7 @@ msgstr ""
 #. module: website_quote
 #: model:sale.quote.option,website_description:website_quote.website_sale_option_line_1
 msgid "Install and administer Odoo."
-msgstr ""
+msgstr "Инсталирај и администрирај го Odoo."
 
 #. module: website_quote
 #: model:sale.quote.line,website_description:website_quote.website_sale_order_line_2
@@ -1078,7 +1078,7 @@ msgstr "Посетителите се очекуваат да имаат фун�
 #: code:addons/website_quote/controllers/main.py:64
 #, python-format
 msgid "Pay & Confirm"
-msgstr ""
+msgstr "Плати и потврди"
 
 #. module: website_quote
 #: model:ir.model.fields,field_description:website_quote.field_sale_order_require_payment
@@ -1437,7 +1437,7 @@ msgstr ""
 #. module: website_quote
 #: model:ir.ui.view,arch_db:website_quote.so_quotation
 msgid "This order"
-msgstr ""
+msgstr "Овој налог"
 
 #. module: website_quote
 #: model:ir.ui.view,arch_db:website_quote.so_quotation
@@ -1627,7 +1627,7 @@ msgstr "Вашата порака е успешно испратена!"
 #. module: website_quote
 #: model:ir.ui.view,arch_db:website_quote.so_quotation
 msgid "Your payment has been received, thank you for your trust."
-msgstr ""
+msgstr "Вашата уплата беше примена, Ви благодариме на Вашата доверба."
 
 #. module: website_quote
 #: model:sale.quote.template,website_description:website_quote.website_quote_template_default
