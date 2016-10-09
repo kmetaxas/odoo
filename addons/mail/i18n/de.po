@@ -4,16 +4,18 @@
 # 
 # Translators:
 # Anja Funk <anja.funk@afimage.de>, 2016
+# Ermin Trevisan <trevi@twanda.com>, 2016
+# Leon Fischer <leon.fischer621@gmail.com>, 2016
 # Ralf Hilgenstock <rh@dialoge.info>, 2016
-# darenkster <renkosp@gmail.com>, 2016
+# darenkster <inactive+darenkster@transifex.com>, 2016
 # Thorsten Vocks <thorsten.vocks@openbig.org>, 2016
 # Wolfgang Taferner, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-22 13:00+0000\n"
-"PO-Revision-Date: 2016-07-23 09:04+0000\n"
+"POT-Creation-Date: 2016-09-22 13:16+0000\n"
+"PO-Revision-Date: 2016-09-23 08:58+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: German (http://www.transifex.com/odoo/odoo-9/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -642,7 +644,7 @@ msgstr "CC"
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_tracking_value_form
 msgid "Change"
-msgstr "Wechselgeld"
+msgstr "Ändern"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_tracking_value_field
@@ -798,7 +800,7 @@ msgstr "E-Mail schreiben"
 #: code:addons/mail/static/src/xml/client_action.xml:135
 #, python-format
 msgid "Compose a new message"
-msgstr ""
+msgstr "Schreibe eine neue Nachricht"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message_composition_mode
@@ -850,10 +852,15 @@ msgstr "Gespräche"
 
 #. module: mail
 #. openerp-web
-#: code:addons/mail/static/src/js/client_action.js:250
+#: code:addons/mail/static/src/js/client_action.js:300
 #, python-format
 msgid "Create %s"
 msgstr "%s erstellen"
+
+#. module: mail
+#: model:ir.model.fields,field_description:mail.field_mail_channel_create_date
+msgid "Create Date"
+msgstr ""
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_email_template_preview_create_uid
@@ -874,7 +881,6 @@ msgstr "Angelegt von"
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_email_template_preview_create_date
 #: model:ir.model.fields,field_description:mail.field_mail_alias_create_date
-#: model:ir.model.fields,field_description:mail.field_mail_channel_create_date
 #: model:ir.model.fields,field_description:mail.field_mail_channel_partner_create_date
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message_create_date
 #: model:ir.model.fields,field_description:mail.field_mail_mail_create_date
@@ -1705,7 +1711,7 @@ msgstr ""
 #: code:addons/mail/static/src/js/chatter.js:443
 #, python-format
 msgid "Log"
-msgstr ""
+msgstr "Protokoll"
 
 #. module: mail
 #. openerp-web
@@ -2359,7 +2365,7 @@ msgid ""
 "Parent subtype, used for automatic subscription. This field is not correctly"
 " named. For example on a project, the parent_id of project subtypes refers "
 "to task-related subtypes."
-msgstr "Übergeordneter Subtyp, der für automatische Abonnements genutzt wird. Das Feld ist nicht korrekt bezeichnet. Z.B. referenziert bei einem Projekt die übergeordnete Projekt Subtyp-ID auf Aufgabenbezogene Subtypen. "
+msgstr "Übergeordneter Subtyp, der für automatische Abonnements genutzt wird. Das Feld ist nicht korrekt bezeichnet. Z.B. referenziert bei einem Projekt die übergeordnete Projekt Subtyp-ID auf aufgabenbezogene Subtypen. "
 
 #. module: mail
 #: model:ir.model,name:mail.model_res_partner
@@ -3004,7 +3010,7 @@ msgstr "Diese Feld enthält das Bild der Gruppe, beschränkt auf 1024x1024px."
 msgid ""
 "This group is visible by non members. Invisible groups can add members "
 "through the invite button."
-msgstr ""
+msgstr "Diese Gruppe ist für Nicht-Mitglieder sichtbar. Nicht-öffentliche Gruppen können Mitglieder mit dem Einladen-Button hinzufügen."
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.view_mail_search

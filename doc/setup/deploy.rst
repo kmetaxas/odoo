@@ -231,11 +231,17 @@ just about any SSL termination proxy, but requires the following setup:
 * your SSL termination proxy should also automatically redirect non-secure
 connections to the secure port
 
+.. warning::
+
+  In case you are using the Point of Sale module in combination with a `POSBox`_,
+  you must disable the HTTPS configuration for the route ``/pos/web`` to avoid
+  mixed-content errors.
+
 Configuration sample
 --------------------
 
 * redirect http requests to https
-* proxiing requests to odoo
+* proxy requests to odoo
 
 in ``/etc/odoo.conf`` set:
 
@@ -422,3 +428,4 @@ which will generate a 32 characters pseudorandom printable string.
 .. _use an SSH tunnel:
     http://www.postgresql.org/docs/9.3/static/ssh-tunnels.html
 .. _WSGI: http://wsgi.readthedocs.org/
+.. _POSBox: https://www.odoo.com/page/point-of-sale-hardware#part_2

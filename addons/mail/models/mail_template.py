@@ -116,7 +116,7 @@ class MailTemplate(models.Model):
 
     name = fields.Char('Name')
     model_id = fields.Many2one('ir.model', 'Applies to', help="The kind of document with with this template can be used")
-    model = fields.Char('Related Document Model', related='model_id.model', select=True, store=True, readonly=True)
+    model = fields.Char('Related Document Model', related='model_id.model', index=True, store=True, readonly=True)
     lang = fields.Char('Language',
                        help="Optional translation language (ISO code) to select when sending out an email. "
                             "If not set, the english version will be used. "
@@ -493,7 +493,7 @@ class MailTemplate(models.Model):
                 )
 
             # Add report in attachments: generate once for all template_res_ids
-            if template.report_template and not 'report_template_in_attachment' in self.env.context:
+            if template.report_template:
                 for res_id in template_res_ids:
                     attachments = []
                     report_name = self.render_template(template.report_name, template.model, res_id)

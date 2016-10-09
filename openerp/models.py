@@ -1040,6 +1040,8 @@ class BaseModel(object):
         :param dict context:
         :returns: {ids: list(int)|False, messages: [Message]}
         """
+        if context is None:
+            context = {}
         cr.execute('SAVEPOINT model_load')
         messages = []
 
@@ -1094,6 +1096,10 @@ class BaseModel(object):
         if any(message['type'] == 'error' for message in messages):
             cr.execute('ROLLBACK TO SAVEPOINT model_load')
             ids = False
+
+        if ids and context.get('defer_parent_store_computation'):
+            self._parent_store_compute(cr)
+
         return {'ids': ids, 'messages': messages}
 
     def _add_fake_fields(self, cr, uid, fields, context=None):
@@ -1278,7 +1284,7 @@ class BaseModel(object):
                 except ValidationError, e:
                     raise
                 except Exception, e:
-                    raise ValidationError("Error while validating constraint\n\n%s" % tools.ustr(e))
+                    raise ValidationError("%s\n\n%s" % (_("Error while validating constraint"), tools.ustr(e)))
 
     @api.model
     def default_get(self, fields_list):
@@ -1386,7 +1392,7 @@ class BaseModel(object):
 
     def _get_default_form_view(self, cr, user, context=None):
         """ Generates a default single-line form view using all fields
-        of the current model except the m2m and o2m ones.
+        of the current model.
 
         :param cr: database cursor
         :param int user: user id
@@ -1397,7 +1403,7 @@ class BaseModel(object):
         view = etree.Element('form', string=self._description)
         group = etree.SubElement(view, 'group', col="4")
         for fname, field in self._fields.iteritems():
-            if field.automatic or field.type in ('one2many', 'many2many'):
+            if field.automatic:
                 continue
 
             etree.SubElement(group, 'field', name=fname)
