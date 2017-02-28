@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-13 09:40+0000\n"
-"PO-Revision-Date: 2016-10-29 03:13+0000\n"
+"PO-Revision-Date: 2017-02-18 10:01+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Romanian (http://www.transifex.com/odoo/odoo-9/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -173,7 +173,7 @@ msgstr "<span class=\"label label-default text-center odoo_purple\">'Disponibil'
 msgid ""
 "<span class=\"label label-default text-center odoo_purple\">Click on <span "
 "class=\"fa fa-truck\"/> Delivery</span>"
-msgstr ""
+msgstr "<span class=\"label label-default text-center odoo_purple\">Clic pe <span class=\"fa fa-truck\"/> Livrare</span>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -252,7 +252,7 @@ msgid ""
 "                                        <strong>Import a file</strong><br/>\n"
 "                                        <span class=\"small\">Recommended if &gt;100 products</span>\n"
 "                                    </span>"
-msgstr ""
+msgstr "<span class=\"panel-title\">\n                                        <span class=\"fa\" data-icon=\"&#57408;\"/>\n                                        <strong>Importă un fișier</strong><br/>\n                                        <span class=\"small\">Recomandat pentru &gt;100 produse</span>\n                                    </span>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -282,7 +282,7 @@ msgid ""
 "                                        <strong> Create manually</strong><br/>\n"
 "                                        <span class=\"small\">Recommended if &lt;100 products</span>\n"
 "                                    </span>"
-msgstr ""
+msgstr "<span class=\"panel-title\">\n                                        <span class=\"fa\" data-icon=\"&#57440;\"/>\n                                        <strong> Creare manuală</strong><br/>\n                                        <span class=\"small\">Recomandat dacă sunt &lt;100 produse</span>\n                                    </span>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -317,17 +317,17 @@ msgstr ""
 #: model:ir.ui.view,arch_db:stock.report_delivery_document
 #: model:ir.ui.view,arch_db:stock.report_picking
 msgid "<span><strong>Customer Address:</strong></span>"
-msgstr ""
+msgstr "<span><strong>Adresă client:</strong></span>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_picking
 msgid "<span><strong>Delivery Address:</strong></span>"
-msgstr ""
+msgstr "<span><strong>Adresă de livrare:</strong></span>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_picking
 msgid "<span><strong>Vendor Address:</strong></span>"
-msgstr ""
+msgstr "<span><strong>Adresă vânzător:</strong></span>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_picking
@@ -509,12 +509,12 @@ msgstr ""
 #: model:ir.ui.view,arch_db:stock.report_delivery_document
 #: model:ir.ui.view,arch_db:stock.report_picking
 msgid "<strong>Order (Origin)</strong>"
-msgstr ""
+msgstr "<strong>Comandă (Origine)</strong>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_inventory
 msgid "<strong>Package</strong>"
-msgstr ""
+msgstr "<strong>Ambalare</strong>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_delivery_document
@@ -526,7 +526,7 @@ msgstr "<strong>Produs</strong>"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_inventory
 msgid "<strong>Production Lot</strong>"
-msgstr ""
+msgstr "<strong>Lot</strong>"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.report_delivery_document
@@ -625,7 +625,7 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "API Documentation"
-msgstr ""
+msgstr "Documentație API"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -886,12 +886,12 @@ msgstr "Restanță <em>%s</em> <b>creată</b>."
 #. module: stock
 #: model:ir.model,name:stock.model_stock_backorder_confirmation
 msgid "Backorder Confirmation"
-msgstr ""
+msgstr "Confirmare restanță"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_backorder_confirmation
 msgid "Backorder creation"
-msgstr ""
+msgstr "Creare restanță"
 
 #. module: stock
 #: code:addons/stock/stock.py:4732
@@ -1344,12 +1344,12 @@ msgstr "Creați o comandă restantă dacă doriți să procesați ulterior\n can
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Create an Inventory Adjustment"
-msgstr ""
+msgstr "Creează ajustare inventar"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Create your products"
-msgstr ""
+msgstr "Creează produse"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_inventory_move_ids
@@ -1518,7 +1518,7 @@ msgstr "Clienți"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_config_settings_module_delivery_dhl
 msgid "DHL integration"
-msgstr ""
+msgstr "Integrare DHL"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -1579,7 +1579,7 @@ msgstr "Date de inventariere și mișcări"
 #. module: stock
 #: model:ir.model,name:stock.model_report_stock_lines_date
 msgid "Dates of Inventories and latest Moves"
-msgstr ""
+msgstr "Date de inventariere și ultimele mișcări"
 
 #. module: stock
 #: selection:stock.warehouse.orderpoint,lead_type:0
@@ -1589,7 +1589,7 @@ msgstr ""
 #. module: stock
 #: selection:stock.warehouse.orderpoint,lead_type:0
 msgid "Day(s) to purchase"
-msgstr ""
+msgstr "Zile pentru achiziție"
 
 #. module: stock
 #: model:res.company,overdue_msg:stock.res_company_1
@@ -2033,7 +2033,7 @@ msgstr "FIFO, LIFO..."
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_config_settings_module_delivery_fedex
 msgid "Fedex integration"
-msgstr ""
+msgstr "Integrare FedEx"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.quant_search_view
@@ -2730,7 +2730,7 @@ msgstr "Inventarieri"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_inventory_filter
 msgid "Inventories Month"
-msgstr ""
+msgstr "Inventare lunare"
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.stock_picking_type_action
@@ -2825,7 +2825,7 @@ msgstr "Rute inventar"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Inventory Settings"
-msgstr ""
+msgstr "Setări inventar"
 
 #. module: stock
 #: model:ir.ui.menu,name:stock.menu_quants
@@ -2864,7 +2864,7 @@ msgstr "Este urmăritor"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_location_return_location
 msgid "Is a Return Location?"
-msgstr ""
+msgstr "Locație retur?"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_location_scrap_location
@@ -3202,12 +3202,12 @@ msgstr "Inventar Lot"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_pack_operation_lot_lot_name
 msgid "Lot Name"
-msgstr ""
+msgstr "Nume lot"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_picking_form
 msgid "Lot Split"
-msgstr ""
+msgstr "Împărțire lot"
 
 #. module: stock
 #: constraint:stock.pack.operation.lot:0
@@ -3237,7 +3237,7 @@ msgstr ""
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_config_settings_group_stock_production_lot
 msgid "Lots and Serial Numbers"
-msgstr ""
+msgstr "Loturi/Numere seriale"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -3415,7 +3415,7 @@ msgstr "Modifica"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.stock_picking_type_kanban
 msgid "More <i class=\"fa fa-caret-down\"/>"
-msgstr ""
+msgstr "Mai mult <i class=\"fa fa-caret-down\"/>"
 
 #. module: stock
 #: model:ir.actions.act_window,help:stock.action_picking_tree
@@ -3580,7 +3580,7 @@ msgstr "Nu sunt mișcări de stoc încă"
 #. module: stock
 #: selection:product.template,tracking:0
 msgid "No Tracking"
-msgstr ""
+msgstr "Fără urmărire"
 
 #. module: stock
 #: selection:stock.config.settings,group_stock_adv_location:0
@@ -3643,7 +3643,7 @@ msgstr "Note"
 #: code:addons/stock/stock.py:1040
 #, python-format
 msgid "Nothing to check the availability for."
-msgstr ""
+msgstr "Nu trebuie făcută verificare disponibilități."
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -3987,12 +3987,12 @@ msgstr "Referință pachet"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_picking_form
 msgid "Package To Move"
-msgstr ""
+msgstr "Pachet de mutat"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_quant_package_form
 msgid "Package Transfers"
-msgstr ""
+msgstr "Transferuri pachete"
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.action_package_view
@@ -4252,7 +4252,7 @@ msgstr "Data Planificata"
 #. module: stock
 #: model:ir.model,name:stock.model_web_planner
 msgid "Planner"
-msgstr ""
+msgstr "Planificator"
 
 #. module: stock
 #: code:addons/stock/stock.py:1546
@@ -4459,7 +4459,7 @@ msgstr "Numele Produsului"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_config_settings_group_stock_tracking_owner
 msgid "Product Owners"
-msgstr ""
+msgstr "Proprietari produs"
 
 #. module: stock
 #: model:ir.model,name:stock.model_product_template
@@ -4695,7 +4695,7 @@ msgstr ""
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_move_reserved_availability
 msgid "Quantity that has already been reserved for this move"
-msgstr ""
+msgstr "Cantitate ce deja a fost rezervată pentru această mișcare"
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.quantsact
@@ -5144,7 +5144,7 @@ msgstr ""
 #: code:addons/stock/stock.py:2867
 #, python-format
 msgid "Select products manually"
-msgstr ""
+msgstr "Selectează manual produse"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.stock_location_route_form_view
@@ -5641,7 +5641,7 @@ msgstr ""
 #. module: stock
 #: sql_constraint:stock.production.lot:0
 msgid "The combination of serial number and product must be unique !"
-msgstr ""
+msgstr "Combinația dintre număr serial și produs trebuie să fie unică ! "
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_quant_company_id
@@ -6110,7 +6110,7 @@ msgstr ""
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_move_picking_id
 msgid "Transfer Reference"
-msgstr ""
+msgstr "Referință transfer"
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.action_picking_tree
@@ -6148,12 +6148,12 @@ msgstr "Tipul de ambalare"
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_config_settings_module_delivery_ups
 msgid "UPS integration"
-msgstr ""
+msgstr "Integrare UPS"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_config_settings_module_delivery_usps
 msgid "USPS integration"
-msgstr ""
+msgstr "Integrare USPS"
 
 #. module: stock
 #: code:addons/stock/stock.py:730
@@ -6351,7 +6351,7 @@ msgstr "Validat(a)"
 #: model:ir.model.fields,field_description:stock.field_make_procurement_product_variant_count
 #: model:ir.model.fields,field_description:stock.field_stock_change_product_qty_product_variant_count
 msgid "Variant Number"
-msgstr ""
+msgstr "Număr variantă"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_location_search
@@ -6750,12 +6750,12 @@ msgstr ""
 #. module: stock
 #: sql_constraint:stock.pack.operation.lot:0
 msgid "You have already mentioned this lot in another line"
-msgstr ""
+msgstr "Deja ați specificat acest  lot în altă linie"
 
 #. module: stock
 #: sql_constraint:stock.pack.operation.lot:0
 msgid "You have already mentioned this lot name in another line"
-msgstr ""
+msgstr "Deja ați specificat acest nume de lot în altă linie"
 
 #. module: stock
 #: code:addons/stock/wizard/stock_return_picking.py:129
@@ -6806,7 +6806,7 @@ msgstr ""
 #: code:addons/stock/stock.py:2320 code:addons/stock/stock.py:4443
 #, python-format
 msgid "You need to provide a Lot/Serial Number for product %s"
-msgstr ""
+msgstr "Este necesar să specificați un nr de Lot/Număr serial pentru produsul %s"
 
 #. module: stock
 #: code:addons/stock/stock.py:568
@@ -6830,12 +6830,12 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Your Products"
-msgstr ""
+msgstr "Produsele tale"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Your Situation"
-msgstr ""
+msgstr "Situația ta"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -6845,7 +6845,7 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Your Warehouse"
-msgstr ""
+msgstr "Depozitul tău"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_change_product_quantity
@@ -6863,7 +6863,7 @@ msgstr "_Anulează"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "a stockable Product"
-msgstr ""
+msgstr "Produs ce poate fi stocat"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -6878,7 +6878,7 @@ msgstr "barcode.rule"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "configuration menu"
-msgstr ""
+msgstr "meniu de configurare"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.product_template_form_view_procurement_button
@@ -6895,7 +6895,7 @@ msgstr "de exemplu Inventarul anual"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_production_lot_form
 msgid "e.g. LOT/0001/20121"
-msgstr ""
+msgstr "ex. LOT/0001/20121"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_picking_form
@@ -6932,7 +6932,7 @@ msgstr ""
 msgid ""
 "for more\n"
 "                        information."
-msgstr ""
+msgstr "pentru mai multe\n                        informații."
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -7001,7 +7001,7 @@ msgstr "stock.return.picking.line"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "the list of products"
-msgstr ""
+msgstr "lista de produse"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -7048,7 +7048,7 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "when you receive the ordered products"
-msgstr ""
+msgstr "când recepționezi produsele comandate"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -7058,7 +7058,7 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_picking_form
 msgid "↳Put in Pack"
-msgstr ""
+msgstr "↳Pune în Pachet"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_inventory_form

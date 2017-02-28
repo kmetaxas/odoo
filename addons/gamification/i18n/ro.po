@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 13:18+0000\n"
-"PO-Revision-Date: 2016-10-27 17:00+0000\n"
+"PO-Revision-Date: 2017-02-08 14:30+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Romanian (http://www.transifex.com/odoo/odoo-9/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -404,12 +404,12 @@ msgstr ""
 #. module: gamification
 #: model:ir.actions.act_window,help:gamification.goal_definition_list_action
 msgid "Click to create a goal definition."
-msgstr ""
+msgstr "Click pentru a crea definiția obiectivului."
 
 #. module: gamification
 #: model:ir.actions.act_window,help:gamification.goal_list_action
 msgid "Click to create a goal."
-msgstr ""
+msgstr "Click pentru a crea un obiectiv"
 
 #. module: gamification
 #: model:ir.ui.view,arch_db:gamification.goal_definition_form_view
@@ -1069,7 +1069,7 @@ msgstr "Linii"
 #. module: gamification
 #: model:ir.model.fields,help:gamification.field_gamification_challenge_line_ids
 msgid "List of goals that will be set"
-msgstr ""
+msgstr "Lista obiectivelor ce vor fi setate"
 
 #. module: gamification
 #: model:ir.model.fields,help:gamification.field_gamification_challenge_user_ids
@@ -1941,12 +1941,12 @@ msgstr "ex. user.partner_id.id"
 #. module: gamification
 #: model:ir.model,name:gamification.model_gamification_badge_user_wizard
 msgid "gamification.badge.user.wizard"
-msgstr ""
+msgstr "gamification.badge.user.wizard"
 
 #. module: gamification
 #: model:ir.model,name:gamification.model_gamification_goal_wizard
 msgid "gamification.goal.wizard"
-msgstr ""
+msgstr "gamification.goal.wizard"
 
 #. module: gamification
 #: model:ir.ui.view,arch_db:gamification.badge_kanban_view

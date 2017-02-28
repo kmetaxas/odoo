@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-09 09:18+0000\n"
-"PO-Revision-Date: 2016-10-27 17:07+0000\n"
+"PO-Revision-Date: 2017-02-18 18:01+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Romanian (http://www.transifex.com/odoo/odoo-9/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -85,7 +85,7 @@ msgstr ""
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.confirmation
 msgid "<i class=\"fa fa-print\"/> Print"
-msgstr ""
+msgstr "<i class=\"fa fa-print\"/> Tipărire"
 
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.header
@@ -97,19 +97,19 @@ msgstr ""
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.total
 msgid "<span class=\"col-xs-6 text-right h4\">Total:</span>"
-msgstr ""
+msgstr "<span class=\"col-xs-6 text-right h4\">Total:</span>"
 
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.total
 msgid ""
 "<span class=\"col-xs-6 text-right text-muted\" title=\"Taxes may be updated "
 "after providing shipping address\"> Taxes:</span>"
-msgstr ""
+msgstr "<span class=\"col-xs-6 text-right text-muted\" title=\"Taxes may be updated after providing shipping address\"> Taxes:</span>"
 
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.total
 msgid "<span class=\"col-xs-6 text-right text-muted\">Subtotal:</span>"
-msgstr ""
+msgstr "<span class=\"col-xs-6 text-right text-muted\">Subtotal:</span>"
 
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.payment
@@ -305,7 +305,7 @@ msgstr ""
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.website_planner
 msgid "<strong>Contact us now:</strong><br/>"
-msgstr ""
+msgstr "<strong>Contactează-ne acum:</strong><br/>"
 
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.website_planner
@@ -357,7 +357,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:website_sale.confirmation
 #: model:ir.ui.view,arch_db:website_sale.report_shop_saleorder_document
 msgid "<strong>Payment Method:</strong>"
-msgstr ""
+msgstr "<strong>Metodă plată:</strong>"
 
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.confirmation
@@ -663,7 +663,7 @@ msgstr ""
 #. module: website_sale
 #: model:ir.actions.act_window,help:website_sale.product_public_category_action
 msgid "Click to define a new category."
-msgstr ""
+msgstr "Clic pentru a defini o nouă categorie."
 
 #. module: website_sale
 #. openerp-web
@@ -809,7 +809,7 @@ msgstr ""
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_website_config_settings_module_delivery_dhl
 msgid "DHL integration"
-msgstr ""
+msgstr "Integrare DHL"
 
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_website_currency_id
@@ -976,7 +976,7 @@ msgstr ""
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_website_config_settings_module_delivery_fedex
 msgid "Fedex integration"
-msgstr ""
+msgstr "Integrare FedEx"
 
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.extra_info
@@ -1546,7 +1546,7 @@ msgstr "Radio"
 #: model:ir.model.fields,field_description:website_sale.field_product_product_rating_ids
 #: model:ir.model.fields,field_description:website_sale.field_product_template_rating_ids
 msgid "Rating"
-msgstr ""
+msgstr "Evaluare"
 
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.website_planner
@@ -1919,7 +1919,7 @@ msgstr ""
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_product_product_to_weight
 msgid "To Weigh With Scale"
-msgstr ""
+msgstr "De cântărit"
 
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.website_planner
@@ -1951,12 +1951,12 @@ msgstr "Tip"
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_website_config_settings_module_delivery_ups
 msgid "UPS integration"
-msgstr ""
+msgstr "Integrare UPS"
 
 #. module: website_sale
 #: model:ir.model.fields,field_description:website_sale.field_website_config_settings_module_delivery_usps
 msgid "USPS integration"
-msgstr ""
+msgstr "Integrare USPS"
 
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.confirmation
@@ -2257,7 +2257,7 @@ msgstr ""
 #. module: website_sale
 #: model:ir.model,name:website_sale.model_website_config_settings
 msgid "website.config.settings"
-msgstr ""
+msgstr "website.config.settings"
 
 #. module: website_sale
 #: model:ir.ui.view,arch_db:website_sale.cart
