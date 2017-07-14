@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: Odoo 9.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-22 13:16+0000\n"
-"PO-Revision-Date: 2017-03-24 15:52+0000\n"
-"Last-Translator: Nuno Dias <ngalvesdias@mail.com>\n"
+"PO-Revision-Date: 2017-04-05 10:52+0000\n"
+"Last-Translator: Martin Trigaux\n"
 "Language-Team: Portuguese (http://www.transifex.com/odoo/odoo-9/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -618,7 +618,7 @@ msgstr "<strong>Reconciliar os Seus Extratos Bancários</strong>"
 msgid ""
 "<strong>Record Bank Statement (or import file)</strong><br/>\n"
 "                                        Depending on the volume of your transactions, you should be recording your bank statement every week to several times a day."
-msgstr ""
+msgstr "<strong>Registar Extrato Bancário (ou importar ficheiro)</strong><br/>\n                                        Dependendo do volume das suas transações, deverá registar o seus extrato bancário semanalmente até várias vezes ao dia."
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -3538,7 +3538,7 @@ msgstr "Data limite"
 msgid ""
 "Duplicated vendor reference detected. You probably encoded twice the same "
 "vendor bill/refund."
-msgstr ""
+msgstr "Detetada referência de fornecedor duplicada. Provavelmente codificou duas vezes a mesma fatura/nota de débito do forncedor."
 
 #. module: account
 #: model:ir.actions.report.xml,name:account.account_invoice_action_report_duplicate
@@ -3695,7 +3695,7 @@ msgid ""
 "Exchange rates can be automatically updated once a day from <strong>Yahoo "
 "Finance</strong> or the <strong>European Central Bank</strong>. You can "
 "activate this feature in the bottom of the"
-msgstr ""
+msgstr "As taxas de câmbio podem ser atualizadas automaticamente uma vez por dia via <strong>Yahoo Finance</strong> ou <strong>Banco Centrl Europeu</strong>. Pode ativar esta funcionalidade no fim de"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_res_company_expects_chart_of_accounts
@@ -4389,7 +4389,7 @@ msgid ""
 "                        from Odoo, you first need to record all outstanding transactions \n"
 "                        in the payable and receivable accounts. These would be invoices \n"
 "                        that have not been paid or payments that have not been reconciled."
-msgstr ""
+msgstr "Se pretender enviar aos seus clientes os seus extratos \n                        a partir do Odoo, primeiro, precisa de registar todas a transações por liquidar \n                        nas contas de pagamentos e recebimentos. Estas deverão ser faturas \n                        que não foram pagas ou pagamentos que não foram reconciliados."
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -4450,7 +4450,7 @@ msgstr "Para apagar um extrato bancário, primeiro deve cancelá-lo para excluir
 msgid ""
 "In order to pay multiple invoices at once, they must belong to the same "
 "commercial partner."
-msgstr ""
+msgstr "Para poder pagar várias faturas ao mesmo tempo, estas devem pertencer ao mesmo parceiro comercial."
 
 #. module: account
 #: code:addons/account/models/account_payment.py:128
@@ -4817,7 +4817,7 @@ msgstr ""
 msgid ""
 "It's recommended that you do not delete any accounts, even if they are not "
 "relevant. Simply make them inactive."
-msgstr ""
+msgstr "É recomendável que não elimine quaisquer contas, mesmo se elas não forem relevantes. Simplesmente torne-as inativas."
 
 #. module: account
 #: selection:account.financial.report,style_overwrite:0
@@ -5257,7 +5257,7 @@ msgstr "Notas Legais..."
 #. module: account
 #: model:ir.model.fields,help:account.field_account_fiscal_position_note
 msgid "Legal mentions that have to be printed on the invoices."
-msgstr ""
+msgstr "Menções legais que têm de ser impressas nas faturas."
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.view_account_form
@@ -5895,7 +5895,7 @@ msgstr "Uma vez que os rascunhos de facturas são confirmados, \nnão será capa
 msgid ""
 "Once you have created your chart of accounts, you will need to update your "
 "account balances."
-msgstr ""
+msgstr "Assim que tiver criado o seu plano de contas, terá de atualizar os seus saldos da conta."
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -5903,7 +5903,7 @@ msgid ""
 "Once your bank accounts are registered, you will be able \n"
 "                        to access your statements from the Accounting Dashboard. \n"
 "                        The available methods for synchronization are as follows."
-msgstr ""
+msgstr "Assim que as suas contas bancárias estiverem registadas, irá poder\naceder aos extratos bancários a partir do Painel de Contabilidade.\nOs métodos disponíveis para a sincronização são:"
 
 #. module: account
 #: model:ir.ui.view,arch_db:account.account_planner
@@ -8187,6 +8187,14 @@ msgid "The sequence of journal %s is deactivated."
 msgstr "A sequência do diário %s está desactivado."
 
 #. module: account
+#: code:addons/account/models/company.py:91
+#, python-format
+msgid ""
+"There are still unposted entries in the period you want to lock. You should "
+"either post or delete them."
+msgstr ""
+
+#. module: account
 #: code:addons/account/models/account_bank_statement.py:170
 #, python-format
 msgid ""
@@ -8456,7 +8464,7 @@ msgstr "Este imposto de compra será atribuído por padrão em novos produtos."
 #: model:ir.ui.view,arch_db:account.account_planner
 msgid ""
 "This role is best suited for managing the day to day accounting operations:"
-msgstr ""
+msgstr "Esta função é adequada para a gestão diária das operações de contabilidade:"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_config_settings_default_sale_tax_id
@@ -9287,7 +9295,7 @@ msgstr "Não pode fazer esta modificação num movimento reconciliado. Pode muda
 msgid ""
 "You cannot empty the account number once set.\n"
 "If you would like to delete the account number, you can do it from the Bank Accounts list."
-msgstr ""
+msgstr "Não pode limpar o número da conta uma vez definida. \nSe pretender eliminar o número de conta, pode fazer isso a partir da lista de Contas Bancárias."
 
 #. module: account
 #: code:addons/account/models/account.py:96

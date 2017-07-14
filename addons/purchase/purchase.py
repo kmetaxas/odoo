@@ -476,7 +476,10 @@ class PurchaseOrderLine(models.Model):
             qty = 0.0
             for inv_line in line.invoice_lines:
                 if inv_line.invoice_id.state not in ['cancel']:
-                    qty += inv_line.uom_id._compute_qty_obj(inv_line.uom_id, inv_line.quantity, line.product_uom)
+                    if inv_line.invoice_id.type == 'in_invoice':
+                        qty += inv_line.uom_id._compute_qty_obj(inv_line.uom_id, inv_line.quantity, line.product_uom)
+                    elif inv_line.invoice_id.type == 'in_refund':
+                        qty -= inv_line.uom_id._compute_qty_obj(inv_line.uom_id, inv_line.quantity, line.product_uom)
             line.qty_invoiced = qty
 
     @api.depends('order_id.state', 'move_ids.state')
@@ -817,7 +820,7 @@ class ProcurementOrder(models.Model):
     @api.v8
     def _get_purchase_order_date(self, schedule_date):
         self.ensure_one()
-        seller_delay = int(self.product_id._select_seller(self.product_id).delay)
+        seller_delay = int(self.product_id._select_seller(product_id=self.product_id, quantity=self.product_qty).delay)
         return schedule_date - relativedelta(days=seller_delay)
 
     @api.v7
