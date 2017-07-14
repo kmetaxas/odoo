@@ -1,173 +1,64 @@
-.vote {
-  min-width: 38px;
-  margin-right: 12px;
-}
-.vote .vote_count {
-  font-size: 160%;
-  font-weight: bold;
-  line-height: 12px;
-}
-.vote .vote_up, .vote .vote_down {
-  font-size: 130%;
-}
+/*
+Error: Invalid CSS after "#4D964E": expected expression (e.g. 1px, bold), was ";"
+        on line 62 of ./addons/website_forum/static/src/css/website_forum.sass
 
-.author-box {
-  min-width: 200px;
-  padding: 4px;
-  background-color: #f5f5f5;
-}
+57:   color: #eea91e
+58: 
+59: .oe_answer_true
+60:   color: #3c763d
+61:   &:hover {
+62:     color: #4D964E;
+63:   }
+64: 
+65: .oe_answer_false
+66:   color: #bbbbbb
+67:   &:hover {
 
-.question-block {
-  margin-left: 50px;
-}
-
-.question {
-  clear: left;
-}
-
-.question .question-name {
-  font-size: 150%;
-}
-.question .badge {
-  background-color: #ccc;
-  margin-left: 4px;
-}
-.question .badge-active {
-  background-color: #428bca;
-}
-.question img {
-  max-width: 600px;
-  height: auto !important;
-}
-
-.forum_answer img {
-  max-width: 600px;
-  height: auto !important;
-}
-
-img.o_forum_avatar {
-  max-height: 40px;
-  margin-right: 10px;
-}
-
-img.o_forum_avatar_big {
-  max-width: 75px;
-  margin-right: 10px; }
-
-.oe_grey {
-  background-color: #eeeeee;
-}
-
-.badge-gold {
-  color: #ffcc00;
-}
-
-.badge-silver {
-  color: #cccccc;
-}
-
-.badge-bronze {
-  color: #eea91e;
-}
-
-.oe_answer_true {
-  color: #3c763d;
-}
-
-.forum_answer .oe_answer_true:hover {
-  color: #4D964E;
-}
-
-.oe_answer_false {
-  color: #bbbbbb;
-}
-
-.oe_answer_false:hover {
-  color: #9E9C9C;
-}
-
-.favourite_question {
-  color: #bbbbbb !important;
-}
-
-.forum_favourite_question {
-  color: #ffcc00 !important;
-}
-
-a.no-decoration {
-  cursor: pointer;
-  text-decoration: none !important;
-}
-
-.faq-question:hover {
-  text-decoration: none !important;
-  color: #428bca;
-}
-
-.oe_comment_grey {
-  background-color: #f5f5f5;
-  padding: 4px;
-}
-
-.close.comment_delete {
-  font-size: 16px;
-}
-
-.country_flag {
-  max-height: 16px;
-  display: inline-block;
-  margin-left: 2px;
-}
-
-.tag_text .text-core .text-wrap textarea, .tag_text .text-core .text-wrap input, .tag_text .text-core .text-wrap .text-dropdown, .tag_text .text-core .text-wrap .text-prompt {
-  font: 1.2em "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-}
-.tag_text .text-core .text-wrap .text-tags .text-tag .text-button {
-  font: 1.2em "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  height: 1.2em !important;
-}
-
-.oe_forum_alert {
-  position: absolute;
-  margin-top: -30px;
-  margin-left: 90px;
-  width: 300px;
-  z-index: 9999;
-}
-
-.oe_forum_email_required {
-  position: absolute;
-  margin-top: 155px;
-  margin-left: 500px;
-  margin-right: 100px;
-  z-index: 5;
-}
-
-button.btn-link.text-muted {
-  color: #999;
-}
-
-.o_forum_user_bio_expand {
-  position: absolute;
-  z-index: 200;
-  display: none; }
-
-.o_forum_tooltip_heading {
-  padding: 0px;
-  margin: 0px;
-  font-size: 18px; }
-
-.o_forum_user_bio {
-  color: black;
-  width: 318px;
-  min-height: 100px;
-  cursor: auto;
-  border: 1px solid darkgray;
-  background-color: whitesmoke;
-  line-height: 13px;
-  font-size: 11px;
-  word-wrap: break-word; }
-  .o_forum_user_bio .o_forum_tooltip_line {
-    min-height: 13px; }
-  .o_forum_user_bio .o_forum_tooltip_header {
-    min-height: 75px; }
+Backtrace:
+./addons/website_forum/static/src/css/website_forum.sass:62
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/script/lexer.rb:229:in `expected!'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/script/parser.rb:744:in `assert_done'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/script/parser.rb:76:in `parse'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/script/parser.rb:240:in `parse'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/script.rb:27:in `parse'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:1151:in `parse_script'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:721:in `parse_property'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:692:in `parse_property_or_rule'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:658:in `parse_line'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:536:in `build_tree'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:555:in `block in append_children'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:554:in `each'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:554:in `append_children'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:545:in `block in build_tree'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:538:in `each'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:538:in `build_tree'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:555:in `block in append_children'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:554:in `each'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:554:in `append_children'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:545:in `block in build_tree'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:538:in `each'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:538:in `build_tree'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:555:in `block in append_children'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:554:in `each'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:554:in `append_children'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:409:in `_to_tree'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/engine.rb:281:in `render'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:294:in `watch'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/plugin.rb:109:in `method_missing'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:360:in `watch_or_update'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/exec/base.rb:52:in `parse'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/lib/sass/exec/base.rb:19:in `parse!'
+/home/arcanum/.gem/ruby/2.1.0/gems/sass-3.4.23/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:22:in `load'
+/usr/local/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"#4D964E\": expected expression (e.g. 1px, bold), was \";\"\A         on line 62 of ./addons/website_forum/static/src/css/website_forum.sass\A \A 57:   color: #eea91e\A 58: \A 59: .oe_answer_true\A 60:   color: #3c763d\A 61:   &:hover {\A 62:     color: #4D964E;\A 63:   }\A 64: \A 65: .oe_answer_false\A 66:   color: #bbbbbb\A 67:   &:hover {"; }

@@ -2039,7 +2039,7 @@
   padding-left: 14px;
 }
 .openerp ul.oe_form_status li.oe_active, .openerp ul.oe_form_status_clickable li.oe_active {
-  background-color: #5382b9;
+  background-color: #5382ba;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#729fcf), to(#3465a4));
   background-image: -webkit-linear-gradient(top, #729fcf, #3465a4);
   background-image: -moz-linear-gradient(top, #729fcf, #3465a4);
@@ -2086,7 +2086,7 @@
   color: #7C7BAD;
 }
 .openerp ul.oe_form_status_clickable li.oe_active:hover {
-  background-color: #3a699f;
+  background-color: #3a69a0;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#4c85c2), to(#284d7d));
   background-image: -webkit-linear-gradient(top, #4c85c2, #284d7d);
   background-image: -moz-linear-gradient(top, #4c85c2, #284d7d);
@@ -2848,7 +2848,7 @@ body.oe_single_form .oe_single_form_container {
   .openerp .oe_header_row, .openerp ul.oe_header, .openerp div.oe_mail_thread_action, .openerp .oe_mail_recthread_actions, .openerp .oe_button_box, .openerp .oe_form button, .openerp button.oe_invite, .openerp .oe_form header, .openerp .openerp .oe_notebook > li.ui-state-default, .openerp .oe_topbar, .openerp .oe_leftbar, .openerp .oe_loading {
     display: none !important;
   }
-  .openerp .oe_list_content button, .openerp .oe_list_content input[type=checkbox]:not(:checked) {
+  .openerp .oe_list_content button, .openerp .oe_list_content input[type=checkbox] {
     visibility: hidden;
   }
   .openerp .tree_header button, .openerp .oe_mail .oe_mail_thread_msg .oe_mail_unread, .openerp .oe_mail_fetch_more, .openerp .oe_m2o_drop_down_button img, .openerp .oe_form_field_x2many_list_row_add {

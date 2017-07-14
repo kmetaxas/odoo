@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ---- EDITOR BAR ---- {{{ */
 .note-popover, .o_css_editor, .web_editor-dialog, .note-image-dialog {
   /* button */
@@ -910,17 +911,16 @@ html[data-translatable] .oe_field_translate {
 .editor_enable .media_iframe_video .css_editable_mode_display {
   display: block !important;
 }
-
-.editor_enable [placeholder]:empty:after {
+.editor_enable [placeholder]:empty {
   content: "  " attr(placeholder);
-  opacity: 0.5;
 }
-.editor_enable [placeholder]:empty:active:after, [placeholder]:empty:focus:after {
+.editor_enable [placeholder]:empty:active:after, .editor_enable [placeholder]:empty:focus:after {
   content: none;
 }
-.editor_enable input[placeholder]:empty:after, .editor_enable textarea[placeholder]:empty:after, .editor_enable select[placeholder]:empty:after {
+.editor_enable input[placeholder]:empty, .editor_enable textarea[placeholder]:empty, .editor_enable select[placeholder]:empty {
   content: none;
 }
+
 .oe_empty[placeholder]:empty {
   min-height: 220px !important;
   background-repeat: no-repeat;
